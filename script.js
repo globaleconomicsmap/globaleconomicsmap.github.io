@@ -76,7 +76,7 @@ function initGallery() {
 
 function loadNextSlide() {
   const img = new Image();
-  const currentSrc = `${slidesDir}${slideIndex}.png`;
+  const currentSrc = `${slidesDir}${slideIndex}.jpg`;
 
   img.onload = function () {
     // Image exists
