@@ -2,6 +2,14 @@
 const PhotoSwipeLightbox = window.PhotoSwipeLightbox;
 const PhotoSwipe = window.PhotoSwipe;
 
+// Wait for font to load before showing loading text
+document.fonts.load("1em Gruppo").then(() => {
+  const loadingText = document.querySelector(".loading-text");
+  if (loadingText) {
+    loadingText.style.opacity = "1";
+  }
+});
+
 const galleryElement = document.getElementById("gallery");
 const slidesDir = "slides/";
 let slideIndex = 1;
@@ -58,6 +66,12 @@ function initGallery() {
   });
 
   lightbox.init();
+
+  // Hide loading screen
+  const loading = document.getElementById("loading");
+  if (loading) {
+    loading.style.display = "none";
+  }
 }
 
 function loadNextSlide() {
