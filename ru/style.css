@@ -1,0 +1,93 @@
+/* @font-face {
+  font-family: "Gruppo";
+  src: url("Gruppo-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+} */
+
+:root {
+  --bg-color: #000000;
+  --text-color: #ffffff;
+  --gap-size: 40px;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 20px;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-size);
+  width: 100%;
+  max-width: 800px; /* Mobile-first, but limit width on large screens */
+}
+
+.slide-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  cursor: zoom-in;
+}
+
+.slide-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  background-color: #1a1a1a; /* Placeholder color */
+  border-radius: 4px; /* Optional: slight rounding */
+}
+
+.slide-number-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.slide-number {
+  width: 20px;
+  height: 20px;
+  background-color: #000000;
+  border: 1px solid #7b7b7b; /* White border to be visible against black */
+  color: #7b7b7b;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-text {
+  color: #ffffff;
+  font-size: 24px;
+
+  font-family: "Gruppo", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  opacity: 0; /* Hidden by default until font loads */
+  transition: opacity 0.3s ease-in;
+}
